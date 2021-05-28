@@ -1,31 +1,66 @@
-print(''' _                                     _     _                 _ 
-| |                                   (_)   | |               | |
-| |_ _ __ ___  __ _ ___ _   _ _ __ ___ _ ___| | __ _ _ __   __| |
-| __| '__/ _ \/ _` / __| | | | '__/ _ \ / __| |/ _` | '_ \ / _` |
-| |_| | |  __/ (_| \__ \ |_| | | |  __/ \__ \ | (_| | | | | (_| |
- \__|_|  \___|\__,_|___/\__,_|_|  \___|_|___/_|\__,_|_| |_|\__,_|
-''')                                       
-                              
 
-print("Welcome to Treasure Island.\n Your mission is to find the treasure")
+import random
+print("Welcome to ROCK SCISSORS PAPER")
 
-choice1=input('You\'re at a cross road,  Where do you want to go?  Type "left" or "right".' ).lower()
 
-if choice1=="left":
-  choice2=input('You\'ve come to a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat .Type "swim" to swim accorss.').lower()
-  if choice2=="wait":
-    choice3=input("You arrive at the island unharmed.There is a house with 3 doors . One red, one yellow and one blue. Which color do you choose?").lower()
-    if choice3=="red":
-      print("It's a room full of fire. Game Over.")
-    elif  choice3=="yellow":
-      print("You found the treasure. You Win!")
-    elif choice3=="blue":
-      print("You enter a room of beasts.Game Over.")
+rock='''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
 
-    else:
-      print("You choose a door that doesn't exist. Game Over.")
-  else:
-    print("You got attacked by trout")
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
 
-else:
-  print("You fell into a hole. Game Over.")
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+
+'''
+
+game_images=[rock,paper,scissors]
+your_choice=int(input("What do you choose? Type 0 for Rock , 1 for Paper or 2 for scissors "))
+print(game_images[your_choice])
+
+computer_choice=random.randint(0,2)
+
+print(f"Computer chose:")
+
+print(game_images[computer_choice])
+
+if computer_choice== 2 and your_choice==0:
+  print("You Win!!")
+
+elif computer_choice==0 and your_choice==2:
+  print("You lose!!")
+
+elif computer_choice>your_choice:
+  print("You lose!")
+
+elif your_choice>computer_choice:
+  print("You win!!")
+
+elif computer_choice==your_choice:
+  print("Tie!!")
+
+
+
+
+
+
+
+
+
